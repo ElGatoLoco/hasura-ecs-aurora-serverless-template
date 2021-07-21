@@ -407,7 +407,7 @@ Resources:
       Parameters:
         client_encoding: UTF8
   #https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html
-  AuroraCluster:
+  CardanoBlueAuroraCluster:
     DependsOn: RDSSubnetGroup
     Type: 'AWS::RDS::DBCluster'
     Properties:
@@ -485,7 +485,7 @@ Resources:
                     ':',
                     !Ref 'DBMasterUserPassword',
                     '@',
-                    !GetAtt 'AuroraCluster.Endpoint.Address',
+                    !GetAtt 'CardanoBlueAuroraCluster.Endpoint.Address',
                     ':5432/',
                     !Ref 'DBName',
                   ],
